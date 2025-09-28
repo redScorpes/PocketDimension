@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "pocketdimension",
+  "version": "${version}",
+  "name": "PocketDimension",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pocketdimension/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.github.redScorpes.pocketdimension.client.PocketdimensionDataGenerator"
+    ],
+    "client": [
+      "com.github.redScorpes.pocketdimension.client.PocketdimensionClient"
+    ],
+    "main": [
+      "com.github.redScorpes.pocketdimension.Pocketdimension"
+    ]
+  },
+  "mixins": [
+    "pocketdimension.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
