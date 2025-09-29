@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "activated=false": {
+      "model": "pocketdimension:block/pocket_dimension"
+    },
+    "activated=true": {
+      "model": "pocketdimension:block/pocket_dimension_activated"
+    }
+  }
+}
