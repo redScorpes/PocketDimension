@@ -52,7 +52,7 @@ public class ModBlocks {
 
     public static final Block POCKET_DIMENSION = register(
             "pocket_dimension",
-            Block::new,
+            PocketDimensionBlock::new,
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS),
             true
     );
