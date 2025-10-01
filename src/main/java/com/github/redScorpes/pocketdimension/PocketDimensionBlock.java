@@ -1,7 +1,11 @@
 package com.github.redScorpes.pocketdimension;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -11,11 +15,17 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
-public class PocketDimensionBlock extends Block {
+public class PocketDimensionBlock extends BlockWithEntity implements BlockEntityProvider {
     public PocketDimensionBlock(Settings settings) {
         super(settings);
         setDefaultState(getDefaultState().with(ACTIVATED, false));
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return null;
     }
 
     public static final BooleanProperty ACTIVATED = BooleanProperty.of("activated");
@@ -42,5 +52,10 @@ public class PocketDimensionBlock extends Block {
 
             return ActionResult.SUCCESS;
         }
+    }
+
+    @Override
+    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return null;
     }
 }
